@@ -1,0 +1,19 @@
+name: Cucumber Github Action
+description: Executes Cucumber features workflow
+author: hiberbee
+branding:
+  icon: anchor
+  color: green
+inputs:
+  feature:
+    required: true
+    description: Cucumber glue set (kubernetes, docker, selenium)
+  dir:
+    required: true
+    description: Path to Gherkin feature files
+outputs: {}
+runs:
+  using: docker
+  image: harbor.k8s.hiberbee.net/cucumber/${{ inputs.feature }}:latest
+  env:
+    FEATURES_DIR: ${{ inputs.dir }}

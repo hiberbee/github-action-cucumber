@@ -1,0 +1,17 @@
+name: Kubernetes
+on: push
+jobs:
+  cucumber:
+    name: Cucumber
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@main
+      - name: Setup Minikube
+        uses: hiberbee/github-action-minikube@latest
+      - name: Test Kubernetes features
+        uses: hiberbee/github-action-cucumber@latest
+        with:
+          feature: kubernetes
+          dir: src/test/resources/features
+
