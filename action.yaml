@@ -14,6 +14,6 @@ inputs:
 outputs: {}
 runs:
   using: docker
-  image: harbor.k8s.hiberbee.net/cucumber/${{ inputs.feature }}:latest
+  image: harbor.k8s.hiberbee.net/cucumber/kubernetes:latest
   env:
     FEATURES_DIR: ${{ inputs.dir }}
