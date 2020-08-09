@@ -12,4 +12,4 @@ jobs:
       - name: Test Kubernetes features
         uses: hiberbee/github-action-cucumber@latest
         with:
-          dir: src/test/resources/features
+          dir: ${{ github.workspace }}/src/test/resources/features
