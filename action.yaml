@@ -5,15 +5,12 @@ branding:
   icon: anchor
   color: green
 inputs:
-  feature:
-    required: true
-    description: Cucumber glue set (kubernetes, docker, selenium)
   dir:
     required: true
     description: Path to Gherkin feature files
 outputs: {}
 runs:
   using: docker
-  image: harbor.k8s.hiberbee.net/cucumber/kubernetes:latest
+  image: docker://harbor.k8s.hiberbee.net/cucumber/kubernetes:latest
   env:
     FEATURES_DIR: ${{ inputs.dir }}
